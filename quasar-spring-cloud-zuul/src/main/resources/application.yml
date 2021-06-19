@@ -1,0 +1,41 @@
+server:
+  port: 13080
+spring:
+  application:
+    name: zuul
+  profiles:
+    active: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${url-eureka.server}:${url-eureka.port}/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    instance-id: ${spring.application.name}-${server.port}
+zuul:
+  ignored-services: '*'
+  prefix: /api
+  host:
+    connect-timeout-millis: 5000
+    socket-timeout-millis: 5000
+  routes:
+    message-server:
+      service-id: MESSAGE-SERVER
+      path: /message/**
+ribbon:
+  read-timeout: 5000
+  connect-timeout: 5000
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeout-in-milliseconds: 5000
+---
+url-eureka:
+  server: 127.0.0.1
+  port: 13090
+spring:
+  profiles: dev

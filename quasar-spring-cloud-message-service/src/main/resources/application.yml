@@ -1,0 +1,21 @@
+server:
+  port: 13070
+spring:
+  application:
+    name: message-server
+  profiles:
+    active: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${url-eureka.server}:${url-eureka.port}/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    instance-id: ${spring.application.name}-${server.port}
+---
+url-eureka:
+  server: 127.0.0.1
+  port: 13090
+spring:
+  profiles: dev
