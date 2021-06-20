@@ -7,7 +7,7 @@ node{
                 , extensions: []
                 , userRemoteConfigs: [[url: 'https://github.com/SayAMDYES/spring-cloud-test']]])
     }
-    stage('install'){
-        sh 'mvn -f ${projectName} clean package dockerfile:build'
-    }
+//     stage('install'){
+//         sh 'mvn -f ${projectName} clean package dockerfile:build'
+//     }
 }
