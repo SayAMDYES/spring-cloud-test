@@ -6,9 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="quasar-spring-cloud-eureka" />
-        <module name="quasar-spring-cloud-message-service" />
-        <module name="quasar-spring-cloud-zuul" />
+        <module name="message-service" />
+        <module name="eureka" />
+        <module name="zuul" />
       </profile>
     </annotationProcessing>
   </component>

@@ -8,9 +8,9 @@
     <artifactId>quasar-spring-cloud</artifactId>
     <version>1.0.0</version>
     <modules>
-        <module>quasar-spring-cloud-eureka</module>
-        <module>quasar-spring-cloud-zuul</module>
-        <module>quasar-spring-cloud-message-service</module>
+        <module>eureka</module>
+        <module>zuul</module>
+        <module>message-service</module>
     </modules>
 
     <properties>
@@ -19,6 +19,7 @@
         <spring.boot.version>2.3.12.RELEASE</spring.boot.version>
         <spring.cloud.version>2.2.6.RELEASE</spring.cloud.version>
         <spring.cloud.starter.version>1.4.7.RELEASE</spring.cloud.starter.version>
+        <docker.host>192.168.50.168:43999</docker.host>
     </properties>
 
     <packaging>pom</packaging>
