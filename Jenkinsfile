@@ -8,6 +8,6 @@ node{
                 , userRemoteConfigs: [[url: 'https://github.com/SayAMDYES/spring-cloud-test']]])
     }
     stage('install'){
-        sh "if [[ ${branch} == '*' ]];then mvn clean package dockerfile:build else sh mvn -f ${projectName} clean package dockerfile:build fi"
+        sh "if [[ ${branch} == '*' ]];then mvn clean package dockerfile:build else mvn -f ${projectName} clean package dockerfile:build fi"
     }
 }
