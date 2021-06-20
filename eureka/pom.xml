@@ -48,7 +48,7 @@
                 <version>1.4.13</version>
                 <configuration>
                     <repository>${docker.host}/${project.parent.artifactId}</repository>
-                    <tag>${docker.host}/${project.parent.artifactId}/${project.artifactId}:${project.parent.version}</tag>
+                    <tag>${docker.host}/${project.parent.artifactId}/${project.build.finalName}:${project.parent.version}</tag>
                 </configuration>
             </plugin>
         </plugins>
