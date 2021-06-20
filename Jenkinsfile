@@ -7,4 +7,7 @@ node{
                 , extensions: []
                 , userRemoteConfigs: [[url: 'https://github.com/SayAMDYES/spring-cloud-test']]])
     }
+    stage('install'){
+        sh 'mvn install'
+    }
 }
