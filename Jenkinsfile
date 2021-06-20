@@ -8,7 +8,6 @@ node{
                 , userRemoteConfigs: [[url: 'https://github.com/SayAMDYES/spring-cloud-test']]])
     }
     stage('install'){
-        sh 'echo ${projectName}'
-        sh "if [[ ${projectName} == '*' ]];then mvn clean package dockerfile:build else mvn -f ${projectName} clean package dockerfile:build fi"
+        sh 'mvn -f ${projectName} clean package dockerfile:build'
     }
 }
