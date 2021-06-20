@@ -64,9 +64,9 @@
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>1.4.13</version>
                 <configuration>
-                    <repository>${docker.host}/${project.parent.artifactId}</repository>
+                    <repository>${docker.host}/${project.parent.artifactId}/${project.build.finalName}</repository>
                     <tag>
-                        ${project.build.finalName}
+                        ${project.parent.version}
                     </tag>
                 </configuration>
             </plugin>
