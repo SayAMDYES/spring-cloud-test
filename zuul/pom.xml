@@ -73,7 +73,7 @@
                 <configuration>
                     <repository>${docker.host}/${project.parent.artifactId}</repository>
                     <tag>
-                        ${docker.host}/${project.parent.artifactId}/${project.build.finalName}:${project.parent.version}
+                        ${project.build.finalName}
                     </tag>
                 </configuration>
             </plugin>
