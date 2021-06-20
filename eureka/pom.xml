@@ -49,9 +49,6 @@
                 <configuration>
                     <repository>${docker.host}/${project.parent.artifactId}</repository>
                     <tag>${docker.host}/${project.parent.artifactId}/${project.artifactId}:${project.parent.version}</tag>
-                    <buildArgs>
-                        <JAR_FILE>target/${project.artifactId}.jar</JAR_FILE>
-                    </buildArgs>
                 </configuration>
             </plugin>
         </plugins>
