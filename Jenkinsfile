@@ -1,13 +1,17 @@
 node{
     def mvnHome
-    stage('Pull code from github'){
+    stage('pull'){
         echo 'pull'
         checkout([$class: 'GitSCM'
                 , branches: [[name: '*/${branch}']]
                 , extensions: []
                 , userRemoteConfigs: [[url: 'https://github.com/SayAMDYES/spring-cloud-test']]])
     }
-    stage('Package and create docker-image from target project'){
-        sh 'mvn -f ${projectName} clean package dockerfile:build'
+    stage('build'){
+        sh 'mvn -f ${artifact-id} clean package dockerfile:build'
+    }
+     stage('upload'){
+        sh 'docker -u admin -p 1042389894 http://192.168.50.168:43999'
+        sh 'docker push ${harbor-url}/${group-id}/${artifact-id}:${version}'
     }
 }
