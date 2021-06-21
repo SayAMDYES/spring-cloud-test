@@ -11,7 +11,7 @@ node{
         sh 'mvn -f ${subProjectName} clean package dockerfile:build'
     }
      stage('upload'){
-        sh 'docker -u admin -p 1042389894 http://192.168.50.168:43999'
+        sh 'docker login -u admin -p 1042389894 http://192.168.50.168:43999'
         sh 'docker push ${harborUrl}/${projectName}/${subProjectName}:${version}'
     }
 }
